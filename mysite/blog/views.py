@@ -12,6 +12,7 @@ def post_list(request):
     page_number = request.GET.get('page', 1)
     try:
         posts = paginator.page(page_number)
+        print(posts.object_list)
     except PageNotAnInteger:
         # Если page_number не целое число, то
         # выдать первую страницу
